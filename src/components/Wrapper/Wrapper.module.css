@@ -7,3 +7,9 @@
   flex-wrap: nowrap;
   justify-content: center;
 }
+
+@media (max-width: 720px) {
+  .Wrapper {
+    height: min-content;
+  }
+}
