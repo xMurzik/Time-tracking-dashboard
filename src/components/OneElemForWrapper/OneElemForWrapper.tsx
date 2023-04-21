@@ -36,6 +36,9 @@ const OneElemForWrapper: React.FC = () => {
             onClick={() => {
               setStatus('Daily');
             }}
+            style={{
+              color: status === 'Daily' ? 'white' : 'hsl(236, 100%, 87%)',
+            }}
           >
             Daily
           </span>
@@ -43,12 +46,18 @@ const OneElemForWrapper: React.FC = () => {
             onClick={() => {
               setStatus('Weekly');
             }}
+            style={{
+              color: status === 'Weekly' ? 'white' : 'hsl(236, 100%, 87%)',
+            }}
           >
             Weekly
           </span>
           <span
             onClick={() => {
               setStatus('Monthly');
+            }}
+            style={{
+              color: status === 'Monthly' ? 'white' : 'hsl(236, 100%, 87%)',
             }}
           >
             Monthly
