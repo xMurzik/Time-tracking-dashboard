@@ -3,4 +3,29 @@
   height: 80%;
   background-color: hsl(235, 46%, 20%);
   border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.divInfo {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.infoHours {
+  height: 40px;
+  font-size: 40px;
+  align-items: center;
+}
+
+.infoName {
+  font-size: 14px;
+}
+
+.infoLastHours {
+  color: hsl(236, 100%, 87%);
+  font-size: 12px;
 }
