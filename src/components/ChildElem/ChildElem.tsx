@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './ChildElem.module.css';
 import { Idata } from '../OneElemForWrapper/OneElemForWrapper';
 
+const icon = require('../../images/icon-ellipsis.svg').default as string;
+
 interface infoCard extends Idata {
   status: string;
 }
@@ -37,7 +39,10 @@ const ChildElem: React.FC<infoCard> = ({ title, path, timeframes, status }) => {
 
   return (
     <div className={styles.mainDiv}>
-      <span className={`${styles.divInfo} ${styles.infoName}`}>{title}</span>
+      <span className={`${styles.divInfo} ${styles.infoName}`}>
+        {title === 'SelfCare' ? 'Self Care' : title}{' '}
+        <img src={icon} alt="textKek" />
+      </span>
       <span className={`${styles.divInfo} ${styles.infoHours}`}>
         {fixedData.current}hrs
       </span>
