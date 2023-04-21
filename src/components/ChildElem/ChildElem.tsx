@@ -41,7 +41,7 @@ const ChildElem: React.FC<infoCard> = ({ title, path, timeframes, status }) => {
     <div className={styles.mainDiv}>
       <span className={`${styles.divInfo} ${styles.infoName}`}>
         {title === 'SelfCare' ? 'Self Care' : title}{' '}
-        <img src={icon} alt="textKek" />
+        <img className={styles.icon} src={icon} alt="textKek" />
       </span>
       <span className={`${styles.divInfo} ${styles.infoHours}`}>
         {fixedData.current}hrs

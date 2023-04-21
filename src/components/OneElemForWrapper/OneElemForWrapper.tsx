@@ -3,6 +3,8 @@ import styles from './OneElemForWrapper.module.css';
 import data from '../../data.json';
 import ChildElem from '../ChildElem/ChildElem';
 
+const photo = require('../../images/image-jeremy.png');
+
 export interface Idata {
   title: string;
   path: string;
@@ -30,12 +32,27 @@ const OneElemForWrapper: React.FC = () => {
   return (
     <div className={styles.gridElem}>
       <div className={styles.itemMain}>
-        <div className={styles.childDiv}></div>
+        <div className={styles.childDiv}>
+          <img
+            alt="person"
+            className={`${styles.imgForPerson} ${styles.fixElems}`}
+            src={photo}
+          />
+          <div className={styles.info}>
+            <span className={`${styles.report} ${styles.fixElems}`}>
+              Report for
+            </span>
+            <span className={`${styles.personName} ${styles.fixElems}`}>
+              Nikita Bulgakov
+            </span>
+          </div>
+        </div>
         <div className={styles.childNumberTwoDiv}>
           <span
             onClick={() => {
               setStatus('Daily');
             }}
+            className={styles.text}
             style={{
               color: status === 'Daily' ? 'white' : 'hsl(236, 100%, 87%)',
             }}
@@ -46,6 +63,7 @@ const OneElemForWrapper: React.FC = () => {
             onClick={() => {
               setStatus('Weekly');
             }}
+            className={styles.text}
             style={{
               color: status === 'Weekly' ? 'white' : 'hsl(236, 100%, 87%)',
             }}
@@ -53,6 +71,7 @@ const OneElemForWrapper: React.FC = () => {
             Weekly
           </span>
           <span
+            className={styles.text}
             onClick={() => {
               setStatus('Monthly');
             }}
