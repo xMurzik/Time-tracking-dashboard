@@ -1,7 +1,9 @@
+import React from 'react';
 import styles from './OneElemForWrapper.module.css';
 import data from '../../data.json';
+import ChildElem from '../ChildElem/ChildElem';
 
-interface Idata {
+export interface Idata {
   title: string;
   path: string;
   timeframes: {
@@ -20,15 +22,44 @@ interface Idata {
   };
 }
 
-const OneElemForWrapper = () => {
+const OneElemForWrapper: React.FC = () => {
   const typedData: Idata[] = data as Idata[];
+
+  const [status, setStatus] = React.useState<string>('Weekly');
 
   return (
     <div className={styles.gridElem}>
-      <div className={styles.itemMain}></div>
+      <div className={styles.itemMain}>
+        <div className={styles.childDiv}></div>
+        <div className={styles.childNumberTwoDiv}>
+          <span
+            onClick={() => {
+              setStatus('Daily');
+            }}
+          >
+            Daily
+          </span>
+          <span
+            onClick={() => {
+              setStatus('Weekly');
+            }}
+          >
+            Weekly
+          </span>
+          <span
+            onClick={() => {
+              setStatus('Monthly');
+            }}
+          >
+            Monthly
+          </span>
+        </div>
+      </div>
 
       {typedData.map((elem, id) => (
-        <div key={id} className={`${styles.item} ${styles[elem.title]}`}></div>
+        <div key={id} className={`${styles.item} ${styles[elem.title]}`}>
+          <ChildElem {...elem} status={status} />
+        </div>
       ))}
     </div>
   );
